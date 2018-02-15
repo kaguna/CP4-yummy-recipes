@@ -1,0 +1,54 @@
+.panels_detail{
+    margin-top:100px;
+}
+.forgot_pass{
+    float:right;
+    font-size: 90%;
+    position: relative;
+    top:-10px
+}
+.category_buttons a{
+    float: right;
+    font-size: 100%;
+    padding: 10px;
+}
+
+hr{
+    border-top: 5px double #8c8b8b;
+}
+
+body{
+    background-image: url("./components/piza.jpg");
+    margin: 0;
+    height: 100%;
+    background-size: cover;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

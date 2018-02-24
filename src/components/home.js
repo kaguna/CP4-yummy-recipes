@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Toaster from './toasterSuccess'
 import {panel_details, category_buttons } from '../App.css'
 import Header from './navbar'
 class Home extends Component {
@@ -6,6 +7,7 @@ class Home extends Component {
         return (
             <div>
                 <Header/>
+                <Toaster/>
             <div className="container">
                 <div className="panel_details">
                     <div className="col-sm-14">

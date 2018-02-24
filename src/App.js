@@ -5,6 +5,7 @@ import Login from "./components/login"
 import Register from "./components/register"
 import Categories from "./components/categories"
 import ResetPassword from "./components/reset_password";
+import Home from "./components/home";
 import Recipes from "./components/recipes";
 import './App.css';
 
@@ -19,6 +20,7 @@ class App extends Component {
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/categories" component={Categories} />
                   <Route exact path="/reset_password" component={ResetPassword} />
+                  <Route exact path="/home" component={Home} />
               </Switch>
           </Router>
 

@@ -16,7 +16,10 @@ class Header extends Component {
                         <li className="nav navbar-nav navbar-right">
                             <li><a href="#" className="dropdown-toggle" id="profile" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="true">
-                                <span className="glyphicon glyphicon-user"> James <span className="caret"></span></span>
+                                <span className="glyphicon glyphicon-user">
+                                    <span id="username"> {window.localStorage.getItem("username")}</span>
+                                    <span className="caret"></span>
+                                </span>
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="profile">
                                 <li><a href="#"><i className="glyphicon glyphicon-edit"></i> Reset password</a></li>

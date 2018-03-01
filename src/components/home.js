@@ -55,6 +55,7 @@ class Home extends Component {
                             </div>
                             <div className="panel-body">
 
+
                                     <a href="#createcategory" data-toggle="modal" className="btn btn-primary"
                                    data-target="#createcategory"><i class="glyphicon glyphicon-plus"></i>
                                         Create Category</a>
@@ -65,7 +66,7 @@ class Home extends Component {
                                     <span className="list-group-item">
                                         <span className="checkbox">
                                             <label>
-                                                {categories.category_name}
+                                                {categories.category_name}-{categories.id}
                                             </label>
                                         <span className="category_buttons action-buttons">
                                             <a href="#"><span class="glyphicon glyphicon-trash"></span></a>

@@ -14,7 +14,10 @@ class Create_category extends Component {
     create_category_handler = (event) => {
         const {category_name} = this.state;
         event.preventDefault();
-        const header = {headers:{'x-access-token': window.localStorage.getItem('token')}, content_type: 'application/json'};
+        const header = {headers:{'x-access-token': window.localStorage.getItem('token')},
+            content_type: 'application/json'};
+        if (!header)
+            window.location.href='/login';
         axios.post("http://127.0.0.1:5000/categories/", {category_name}, header)
             .then(response => {
                 this.setState({mess: response.data.message, error: "",});
@@ -52,7 +55,7 @@ class Create_category extends Component {
                                     </div>
                                 </div>
                                 <div className="modal-footer">
-                                    <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button type="submit" className="btn btn-danger" data-dismiss="modal">Close</button>
                                     <button type="submit" className="btn btn-primary">
                                         <i class="glyphicon glyphicon-plus"></i> Add Category
                                     </button>

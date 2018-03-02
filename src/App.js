@@ -3,10 +3,9 @@ import {Route,BrowserRouter as Router, Switch, Link } from 'react-router-dom'
 import Info from "./components/jumbotron"
 import Login from "./components/login"
 import Register from "./components/register"
-import Categories from "./components/categories"
+import Categories from "./components/create_category"
 import ResetPassword from "./components/reset_password";
 import Home from "./components/home";
-import Recipes from "./components/recipes";
 import './App.css';
 
 class App extends Component {

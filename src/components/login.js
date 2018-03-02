@@ -21,10 +21,10 @@ class Login extends Component {
         event.preventDefault();
         axios.post("http://127.0.0.1:5000/auth/login", {email, password})
             .then(response => {
-                this.setState({redirect: true});
                 toast.success(response.data.message);
                 window.localStorage.setItem("username", response.data.username);
                 window.localStorage.setItem("token", response.data.access_token);
+                this.props.history.push("/home");
             })
             .catch(error => {
                 if (error.response) {
@@ -36,11 +36,7 @@ class Login extends Component {
     };
 
     render() {
-        const {redirect, email,password} = this.state;
-        if (redirect)
-            return (<Redirect to={{ pathname: '/home',
-                state: { response_message: this.state.mess }
-            }} />);
+        const {email,password} = this.state;
         return (
             <div className="container">
                     <Toaster/>
@@ -84,10 +80,6 @@ class Login extends Component {
                                 </div>
                                 <div className="col-sm-offset-2 col-sm-12">
                                     You don't have an account yet? Register <a href="/register">here</a>
-                                </div>
-
-                                <div className="col-sm-offset-2 col-sm-12">
-                                    You don't have an account yet? Register <a href="/categories">here</a>
                                 </div>
                             </form>
                         </div>

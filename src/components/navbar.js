@@ -24,7 +24,7 @@ class Header extends Component {
                             <ul className="dropdown-menu" aria-labelledby="profile">
                                 <li><a href="#"><i className="glyphicon glyphicon-edit"></i> Reset password</a></li>
                                 <li role="separator" className="divider"></li>
-                                <li><a href="#"><i className="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                                <li><a href="/logout"><i className="glyphicon glyphicon-log-out"></i> Logout</a></li>
                             </ul>
                             </li>
                         </li>

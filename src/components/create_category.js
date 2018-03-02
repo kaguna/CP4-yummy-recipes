@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Home from './home';
 class Create_category extends Component {
     constructor(props){
         super(props);
@@ -21,7 +22,7 @@ class Create_category extends Component {
         axios.post("http://127.0.0.1:5000/categories/", {category_name}, header)
             .then(response => {
                 this.setState({mess: response.data.message, error: "",});
-                console.log(response.data)
+                this.props.category_after_creation;
             })
             .catch(error => {
                 if (error.response) {

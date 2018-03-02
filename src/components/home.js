@@ -7,14 +7,14 @@ import axios from 'axios';
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {categories: []};
+        this.state = {categories: [], items: ""};
     }
     view_categories_handler = () => {
         const header = {headers:{'x-access-token': window.localStorage.getItem('token')},
             content_type: 'application/json'};
         axios.get("http://127.0.0.1:5000/categories/",  header)
             .then(response => {
-                this.setState({categories:response.data.categories});
+                this.setState({categories:response.data.categories, items:response.data.total_items});
             })
             .catch(error => {
                 if (error.response) {
@@ -29,12 +29,12 @@ class Home extends Component {
     }
 
     render() {
-        const categories = this.state.categories;
+        const {categories, items} = this.state;
         return (
-            <div>
+            <div id="all_categories">
                 <Header/>
                 <Toaster/>
-                <CreateCategory/>
+                <CreateCategory category_after_creation={this.view_categories_handler()}/>
             <div className="container">
                     <div className="col-sm-offset-1 col-sm-14">
                         <div className="panel panel-primary">
@@ -84,8 +84,8 @@ class Home extends Component {
                             <div className="panel-footer">
                                 <div className="row">
                                     <div className="col-md-6">
-                                        <h6>
-                                            No. of Categories <span className="label label-info">25</span></h6>
+                                        <h4>
+                                            No. of Categories <span className="label label-info">{items}</span></h4>
                                     </div>
                                     <div className="col-md-6">
                                         <ul className="pagination pagination-sm pull-right">

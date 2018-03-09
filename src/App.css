@@ -13,12 +13,16 @@
     padding: 10px;
 }
 
+.action_buttons{
+  margin-right: 1.5em;
+}
+
 hr{
-    border-top: 5px double #8c8b8b;
+    border-top: 20px single #8c8b8b;
 }
 
 body{
-    background: url("./components/yummy.jpg") no-repeat center center;
+    background-color: #ddd;
     margin: 0;
     height: 100vh;
     background-size: cover;

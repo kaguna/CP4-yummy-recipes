@@ -22,7 +22,7 @@ class EditCategory extends Component {
             content_type: 'application/json'};
         axios.put("http://127.0.0.1:5000/category/"+ this.props.category.id, {category_name}, header)
             .then(response => {
-                this.setState({mess: response.data.message, error: "",});
+                this.props.parent.setState({mess: response.data.message, error: ""});
                 this.props.category_after_edit();
                 
             })
@@ -46,11 +46,9 @@ class EditCategory extends Component {
                             <h5 className="modal-title" id="exampleModalLongTitle">Edit category ({this.state.category_name})</h5>
                         </div>
                         <div className="modal-body">
-                            {this.state.mess?
-                                <div className="alert alert-success">{this.state.mess}</div>: ""}
                             {this.state.error?
                                 <div className="alert alert-danger">{this.state.error}</div>: ""}
-                            <form className="form-horizontal" onSubmit={this.edit_category_handler}>
+                            
                                 <div className="form-group">
                                     <label className="control-label col-sm-3">New Category Name:</label>
                                     <div className="col-sm-8">
@@ -59,14 +57,14 @@ class EditCategory extends Component {
                                                value={this.state.category_name} onChange={this.inputHandler}/>
                                     </div>
                                 </div>
+                                </div>
                                 <div className="modal-footer">
-                                    <button type="submit" className="btn btn-danger" data-dismiss="modal">Close</button>
-                                    <button type="submit" className="btn btn-primary">
+                                    <button className="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button  className="btn btn-primary" onClick={this.edit_category_handler}>
                                         <i class="glyphicon glyphicon-edit"></i> Edit Category
                                     </button>
                                 </div>
-                            </form>
-                        </div>
+                            
                     </div>
                 </div>
             </div>

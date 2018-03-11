@@ -3,27 +3,25 @@ import axios from 'axios'
 class EditCategory extends Component {
     constructor(props){
         super(props);
-        if(props.category){
-            this.state=props.category
-        }else{
-            this.state = { category_name: ""}
-        }
+        this.state = {error: ""};
     }
 
     inputHandler = (event) => {
-        const {name, value} = event.target;
+        event.preventDefault();
+        let {name, value} = event.target;
         this.setState({[name]: value});
     };
 
     edit_category_handler = (event) => {
-        const {category_name} = this.state;
         event.preventDefault();
+        const {category_name} = this.state;
         const header = {headers:{'x-access-token': window.localStorage.getItem('token')},
             content_type: 'application/json'};
         axios.put("http://127.0.0.1:5000/category/"+ this.props.category.id, {category_name}, header)
             .then(response => {
                 this.props.parent.setState({mess: response.data.message, error: ""});
                 this.props.category_after_edit();
+               
                 
             })
             .catch(error => {
@@ -31,7 +29,7 @@ class EditCategory extends Component {
                     this.setState({error: error.response.data.message, mess: ""});
                     console.log(error.response.data.message)
                 } else if (error.request) {
-                    console.log("ERRROR")
+                    this.setState({error:"Can't connect to the server.Please check your connection and try again.", mess: ""});
                 }
             });
     };
@@ -43,7 +41,7 @@ class EditCategory extends Component {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div class="modal-header">
-                            <h5 className="modal-title" id="exampleModalLongTitle">Edit category ({this.state.category_name})</h5>
+                            <h5 className="modal-title" id="exampleModalLongTitle">Edit category ({this.props.category.category_name})</h5>
                         </div>
                         <div className="modal-body">
                             {this.state.error?
@@ -54,13 +52,13 @@ class EditCategory extends Component {
                                     <div className="col-sm-8">
                                         <input type="text" name="category_name" className="form-control"
                                                placeholder="Enter New Category name"
-                                               value={this.state.category_name} onChange={this.inputHandler}/>
+                                               defaultValue={this.props.category.category_name} onChange={this.inputHandler}/>
                                     </div>
                                 </div>
                                 </div>
                                 <div className="modal-footer">
                                     <button className="btn btn-danger" data-dismiss="modal">Close</button>
-                                    <button  className="btn btn-primary" onClick={this.edit_category_handler}>
+                                    <button  className="btn btn-primary" data-dismiss="modal" onClick={this.edit_category_handler}>
                                         <i class="glyphicon glyphicon-edit"></i> Edit Category
                                     </button>
                                 </div>

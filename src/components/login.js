@@ -30,7 +30,7 @@ class Login extends Component {
                 if (error.response) {
                     this.setState({error: error.response.data.message});
                 } else if (error.request) {
-                    document.getElementById("post_info").innerHTML = "Network error!";
+                    this.setState({error:"Can't connect to the server.Please check your connection and try again.", mess: ""});
                 }
             });
     };

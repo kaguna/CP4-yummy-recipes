@@ -29,7 +29,7 @@ class Create_category extends Component {
                     this.setState({error: error.response.data.message, mess: ""});
                     console.log(error.response.data.message)
                 } else if (error.request) {
-                    console.log("ERRROR")
+                    this.setState({error:"Can't connect to the server.Please check your connection and try again.", mess: ""});
                 }
             });
     };

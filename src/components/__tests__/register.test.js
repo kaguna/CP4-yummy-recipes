@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import Register from '../register';
+import Register from '../users/Register';
 
 describe('Register component', () => {
   const wrapper = shallow(<Register />);

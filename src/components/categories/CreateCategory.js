@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Home from './home';
-class Create_category extends Component {
+import Home from '../Home';
+class CreateCategory extends Component {
     constructor(props){
         super(props);
         this.state = { category_name: ""}
@@ -12,7 +12,7 @@ class Create_category extends Component {
         this.setState({[name]: value});
     };
 
-    create_category_handler = (event) => {
+    createCategoryHandler = (event) => {
         const {category_name} = this.state;
         event.preventDefault();
         const header = {headers:{'x-access-token': window.localStorage.getItem('token')},
@@ -22,7 +22,7 @@ class Create_category extends Component {
         axios.post("http://127.0.0.1:5000/categories/", {category_name}, header)
             .then(response => {
                 this.setState({mess: response.data.message, error: "",});
-                this.props.category_after_creation();
+                this.props.categoryAfterCreation();
             })
             .catch(error => {
                 if (error.response) {
@@ -47,7 +47,7 @@ class Create_category extends Component {
                             <div className="alert alert-success">{this.state.mess}</div>: ""}
                             {this.state.error?
                                 <div className="alert alert-danger">{this.state.error}</div>: ""}
-                            <form className="form-horizontal" onSubmit={this.create_category_handler}>
+                            <form className="form-horizontal" onSubmit={this.createCategoryHandler}>
                                 <div className="form-group">
                                     <label className="control-label col-sm-3">Category Name:</label>
                                     <div className="col-sm-9">
@@ -69,4 +69,4 @@ class Create_category extends Component {
         );
     }
 }
-export default Create_category;
+export default CreateCategory;

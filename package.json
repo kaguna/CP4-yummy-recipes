@@ -13,7 +13,8 @@
     "react-scripts": "1.1.0",
     "react-toastify": "^3.3.4",
     "to": "^0.2.9",
-    "update": "^0.7.4"
+    "update": "^0.7.4",
+    "watchman": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,6 +23,9 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "axios": "^0.17.1"
+    "axios": "^0.17.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1"
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ChangePassword from './change_password';
+import ChangePassword from './ChangePassword';
 class Header extends Component {
     render() {
         return (

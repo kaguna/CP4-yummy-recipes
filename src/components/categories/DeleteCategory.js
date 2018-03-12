@@ -7,14 +7,14 @@ class DeleteCategory extends Component {
             this.state = { mess: "", error:""}
     }
 
-    delete_category_handler = (event) => {
+    deleteCategoryHandler = (event) => {
         event.preventDefault();
         const header = {headers:{'x-access-token': window.localStorage.getItem('token')},
             content_type: 'application/json'};
         axios.delete("http://127.0.0.1:5000/category/"+ this.props.category.id, header)
         .then(response => {
                 this.props.parent.setState({mess: response.data.message, error: "",});
-                this.props.category_after_delete();
+                this.props.categoryAfterDelete();
                 
             })
             .catch(error => {
@@ -50,7 +50,7 @@ class DeleteCategory extends Component {
                                 <button data-dismiss="modal" className="btn btn-default">
                                         <i class="glyphicon glyphicon-remove"></i> No, Cancel
                                     </button>
-                                    <button data-dismiss="modal" type="button" onClick={this.delete_category_handler} className="btn btn-danger">
+                                    <button data-dismiss="modal" type="button" onClick={this.deleteCategoryHandler} className="btn btn-danger">
                                         <i class="glyphicon glyphicon-ok"></i> Yes, Delete
                                     </button>
                         </div>

@@ -11,7 +11,7 @@ class EditCategory extends Component {
         this.setState({[name]: value});
     };
 
-    edit_category_handler = (event) => {
+    editCategoryHandler = (event) => {
         event.preventDefault();
         const {category_name} = this.state;
         const header = {headers:{'x-access-token': window.localStorage.getItem('token')},
@@ -19,7 +19,7 @@ class EditCategory extends Component {
         axios.put("http://127.0.0.1:5000/category/"+ this.props.category.id, {category_name}, header)
             .then(response => {
                 this.props.parent.setState({mess: response.data.message, error: ""});
-                this.props.category_after_edit();
+                this.props.categoryAfterEdit();
                
                 
             })
@@ -57,7 +57,7 @@ class EditCategory extends Component {
                                 </div>
                                 <div className="modal-footer">
                                     <button className="btn btn-danger" data-dismiss="modal">Close</button>
-                                    <button  className="btn btn-primary" data-dismiss="modal" onClick={this.edit_category_handler}>
+                                    <button  className="btn btn-primary" data-dismiss="modal" onClick={this.editCategoryHandler}>
                                         <i class="glyphicon glyphicon-edit"></i> Edit Category
                                     </button>
                                 </div>

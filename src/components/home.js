@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Pagination } from 'react-bootstrap'
-import Toaster from './toasterSuccess';
+import Toaster from './ToasterSuccess';
 import {panel_details, category_buttons } from '../App.css';
-import Header from './navbar';
-import CreateCategory from './create_category';
-import EditCategory from './edit_category';
-import DeleteCategory from './delete_category';
+import Header from './NavBar';
+import CreateCategory from './categories/CreateCategory';
+import EditCategory from './categories/EditCategory';
+import DeleteCategory from './categories/DeleteCategory';
 import axios from 'axios';
 let url = "http://127.0.0.1:5000/categories/";
 class Home extends Component {
@@ -19,7 +19,7 @@ class Home extends Component {
         this.setState({[name]: value});
     };
 
-    view_categories_handler = (value, page) => {
+    viewCategoriesHandler = (value, page) => {
         const header = {headers:{'x-access-token': window.localStorage.getItem('token')},
             content_type: 'application/json'};
             if(value){
@@ -41,7 +41,7 @@ class Home extends Component {
                     if (error.response.data.message ==="no_categories")
                     {
                         this.setState({no_category: "Welcome to the Yummy recipes, create your first category and enjoy.", 
-                        items:"0",mess: "", error: ""});
+                        items:"0",mess: "", error: "", categories: [], pages:""});
                     }
                     else if(error.response.data.message ==="no_category_on_search")
                     {
@@ -56,15 +56,15 @@ class Home extends Component {
             });
             url = "http://127.0.0.1:5000/categories/";
     };
-    pagination_handler = (page) => {
-        this.view_categories_handler(null, page)
+    paginationHandler = (page) => {
+        this.viewCategoriesHandler(null, page)
     }
-    search_handler = (event) => {
+    searchHandler = (event) => {
         event.preventDefault()
-        this.view_categories_handler(event.target.value);
+        this.viewCategoriesHandler(event.target.value);
     }
     componentDidMount(){
-        this.view_categories_handler();
+        this.viewCategoriesHandler();
     }
 
     render() {
@@ -74,7 +74,7 @@ class Home extends Component {
             pages.push(
                 <Pagination.Item
                 active={i === this.state.current_page}
-                onClick={ this.pagination_handler.bind(this, i)}
+                onClick={ this.paginationHandler.bind(this, i)}
                 >
                     {i}
                 </Pagination.Item>,
@@ -84,7 +84,7 @@ class Home extends Component {
             <div id="all_categories">
                 <Header/>
                 <Toaster/>
-                <CreateCategory category_after_creation={this.view_categories_handler}/>
+                <CreateCategory categoryAfterCreation={this.viewCategoriesHandler}/>
             <div className="container">
                     <div className="col-sm-14">
                         <div className="panel panel">
@@ -99,7 +99,7 @@ class Home extends Component {
                             <div class="form-group has-feedback has-search">
                                     <span class="glyphicon glyphicon-search form-control-feedback"></span>
                                     <input type="text" name="keyword_search" 
-                                    onChange={this.search_handler} class="form-control" placeholder="Search
+                                    onChange={this.searchHandler} class="form-control" placeholder="Search
                                                 for a category..."/>
                                 </div>
                         
@@ -142,9 +142,9 @@ class Home extends Component {
                                             </div>
                                             </div>
                                     <EditCategory key={category.id} category_id={`edit_category${category.id}`} category= {category} 
-                                        category_after_edit={this.view_categories_handler} parent={this}/>
+                                        categoryAfterEdit={this.viewCategoriesHandler} parent={this}/>
                                     <DeleteCategory key={category.id} category_id={`delete_category${category.id}`} category= {category} 
-                                        category_after_delete={this.view_categories_handler} parent={this}/>
+                                        categoryAfterDelete={this.viewCategoriesHandler} parent={this}/>
                                 
                                             </div>
                                    ))}

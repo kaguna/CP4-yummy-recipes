@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Login from "./login"
-import Register from "./register"
+import Login from "./users/Login"
+import Register from "./users/Register"
 
 class Info extends Component {
     render() {

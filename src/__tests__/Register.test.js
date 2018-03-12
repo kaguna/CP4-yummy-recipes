@@ -2,14 +2,17 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import Login from '../users/Login';
+import Register from '../components/users/Register';
 
-describe('Login component', () => {
-  const wrapper = shallow(<Login />);
+describe('Register component', () => {
+  const wrapper = shallow(<Register />);
   const preventDefault = jest.fn();
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
-    expect(wrapper.instance().loginHandler({ preventDefault }));
   });
+
+  it('has divs', () => {
+    expect(wrapper.find('div')).toHaveLength(18);
+  })
 })

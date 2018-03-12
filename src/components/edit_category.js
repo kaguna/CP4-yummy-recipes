@@ -5,7 +5,6 @@ class EditCategory extends Component {
         super(props);
         this.state = {error: ""};
     }
-
     inputHandler = (event) => {
         event.preventDefault();
         let {name, value} = event.target;

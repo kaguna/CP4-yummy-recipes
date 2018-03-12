@@ -21,7 +21,7 @@ class App extends Component {
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/categories" component={Categories} />
                   <Route exact path="/reset_password" component={ResetPassword} />
-                  <Route exact="/home" component={Home} />
+                  <Route exact path="/home" component={Home} />
               </Switch>
           </Router>
 

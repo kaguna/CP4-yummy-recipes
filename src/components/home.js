@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Pagination } from 'react-bootstrap'
 import Toaster from './toasterSuccess';
 import {panel_details, category_buttons } from '../App.css';
 import Header from './navbar';
@@ -18,15 +19,22 @@ class Home extends Component {
         this.setState({[name]: value});
     };
 
-    view_categories_handler = (value) => {
+    view_categories_handler = (value, page) => {
         const header = {headers:{'x-access-token': window.localStorage.getItem('token')},
             content_type: 'application/json'};
             if(value){
                 url = `${url}?q=${value}`;
+            }else if(page){
+                url = `${url}?page=${page}`;
             }
         axios.get(url,  header)
             .then(response => {
-                this.setState({categories:response.data.categories, items:response.data.total_items, no_category:""});
+                this.setState({
+                    categories:response.data.categories,
+                    items:response.data.total_items,
+                    pages: response.data.total_pages,
+                    current_page: response.data.current_page,
+                     no_category:""});
             })
             .catch(error => {
                 if (error.response) {
@@ -48,10 +56,12 @@ class Home extends Component {
             });
             url = "http://127.0.0.1:5000/categories/";
     };
+    pagination_handler = (page) => {
+        this.view_categories_handler(null, page)
+    }
     search_handler = (event) => {
         event.preventDefault()
         this.view_categories_handler(event.target.value);
-        
     }
     componentDidMount(){
         this.view_categories_handler();
@@ -59,6 +69,17 @@ class Home extends Component {
 
     render() {
         let {categories, items, keyword_search} = this.state;
+        let pages = []
+        for(let i = 1; i <= this.state.pages; i++){
+            pages.push(
+                <Pagination.Item
+                active={i === this.state.current_page}
+                onClick={ this.pagination_handler.bind(this, i)}
+                >
+                    {i}
+                </Pagination.Item>,
+            );
+        }
         return (
             <div id="all_categories">
                 <Header/>
@@ -120,23 +141,19 @@ class Home extends Component {
                                             </div>
                                             </div>
                                             </div>
-                                            <EditCategory category_id={`edit_category${category.id}`} category= {category} 
-                                    category_after_edit={this.view_categories_handler} parent={this}/>
-                                    <DeleteCategory category_id={`delete_category${category.id}`} category= {category} 
-                                    category_after_delete={this.view_categories_handler} parent={this}/>
+                                    <EditCategory key={category.id} category_id={`edit_category${category.id}`} category= {category} 
+                                        category_after_edit={this.view_categories_handler} parent={this}/>
+                                    <DeleteCategory key={category.id} category_id={`delete_category${category.id}`} category= {category} 
+                                        category_after_delete={this.view_categories_handler} parent={this}/>
                                 
                                             </div>
                                    ))}
                             </div>
-
                             </div>
-                            <div className="panel-footer">
-                                        <ul className="pagination pagination-lg">
-                                            <li className="disabled"><a href="javascript:void(0)">«</a></li>
-                                            <li className="active"><a href="javascript:void(0)">1
-                                                <span className="sr-only">(current)</span></a></li>
-                                            <li><a href="javascript:void(0)">»</a></li>
-                                        </ul>
+                            <div className="panel-footer bg-dark">
+                                      <Pagination>
+                                        <Pagination bsSize="large">{pages}</Pagination>
+                                      </Pagination>
                                     </div>
                                 </div>
                             </div>

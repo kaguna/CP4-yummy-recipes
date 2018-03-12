@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import {panel_details,forgot_pass } from '../App.css'
+import {panel_details,forgot_pass } from '../../App.css'
 import { Redirect } from 'react-router'
 class Register extends Component {
     constructor (props) {

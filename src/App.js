@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {Route,BrowserRouter as Router, Switch, Link } from 'react-router-dom';
-import Info from "./components/jumbotron";
-import Login from "./components/login";
-import Logout from "./components/logout"
-import Register from "./components/register";
-import Categories from "./components/create_category";
-import ResetPassword from "./components/reset_password";
-import Home from "./components/home";
+import Info from "./components/Jumbotron";
+import Login from "./components/users/Login";
+import Logout from "./components/users/Logout"
+import Register from "./components/users/Register";
+import Categories from "./components/categories/CreateCategory";
+import ResetPassword from "./components/ResetPassword";
+import Home from "./components/Home";
 import './App.css';
 
 class App extends Component {

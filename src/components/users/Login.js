@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {panel_details,forgot_pass } from '../App.css';
+import {panel_details,forgot_pass } from '../../App.css';
 import {toast} from 'react-toastify'
-import Toaster from './toasterSuccess'
+import Toaster from '../ToasterSuccess'
 import axios from 'axios'
-import ResetPassword from './reset_password';
+import ResetPassword from '../ResetPassword';
 
 import { Redirect } from 'react-router'
 class Login extends Component {
@@ -26,7 +26,7 @@ class Login extends Component {
                 window.localStorage.setItem("username", response.data.username);
                 window.localStorage.setItem("email", response.data.email);
                 window.localStorage.setItem("token", response.data.access_token);
-                this.props.history.push("/home");
+                this.props.history.push("./categories/Home");
             })
             .catch(error => {
                 if (error.response) {

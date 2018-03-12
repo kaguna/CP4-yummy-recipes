@@ -1,13 +1,13 @@
 import React,{Component} from 'react'
 
 class Logout extends Component{
-    logout_handler = () => {
+    logoutHandler = () => {
         window.localStorage.clear();
-        this.props.history.push("/login")
+        this.props.history.push("/Login")
 
     };
     componentDidMount() {
-        this.logout_handler();
+        this.logoutHandler();
     }
     render(){
         return (

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Home from './home';
-class ResetPassword extends Component {
+import Home from './Home';
+class ChangePassword extends Component {
     constructor(props){
         super(props);
-        this.state = { email: ""}
+        this.state = {password:"", retyped_password: ""}
     }
 
     inputHandler = (event) => {
@@ -12,10 +12,13 @@ class ResetPassword extends Component {
         this.setState({[name]: value});
     };
 
-    reset_password_handler = (event) => {
-        const {email} = this.state;
+    changePasswordHandler = (event) => {
+        const {password, retyped_password} = this.state;
+        const header = {headers:{'x-access-token': window.localStorage.getItem('token')},
+            content_type: 'application/json'};
         event.preventDefault();
-        axios.post("http://127.0.0.1:5000/auth/send_reset_password_token", {email})
+        let email= window.localStorage.getItem("email")
+        axios.put("http://127.0.0.1:5000/auth/reset_password", {email, password, retyped_password}, header)
             .then(response => {
                 this.setState({mess: response.data.message, error: "",});
             })
@@ -30,12 +33,12 @@ class ResetPassword extends Component {
     };
     render() {
         return (
-            <div className="modal fade" id="resetpassword" tabindex = "-1" role="dialog"
+            <div className="modal fade" id="changepassword" tabindex = "-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
            <div className="modal-dialog" role="document">
                <div className="modal-content">
                    <div class="modal-header">
-                       <h5 className="modal-title" id="exampleModalLongTitle">Email login credetials</h5>
+                       <h5 className="modal-title" id="exampleModalLongTitle">Change password here</h5>
                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                            <span aria-hidden="true">&times;</span>
                        </button>
@@ -46,17 +49,24 @@ class ResetPassword extends Component {
                                 {this.state.error?
                                 <div className="alert alert-danger">{this.state.error}</div>: ""}
 
-                       <form className="form-horizontal"  onSubmit={this.reset_password_handler}>
+                       <form className="form-horizontal"  onSubmit={this.changePasswordHandler}>
                            <div className="form-group">
-                               <label className="control-label col-sm-2">Email:</label>
+                               <label className="control-label col-sm-2">New password:</label>
                                <div className="col-sm-10">
-                                   <input type="email" name="email" className="form-control" placeholder="Enter email" 
-                                    value={this.state.email} onChange={this.inputHandler}/>
+                                   <input type="password" name="password" className="form-control" placeholder="Enter new password" 
+                                    value={this.state.password} onChange={this.inputHandler}/>
+                               </div>
+                            </div>
+                            <div className="form-group">
+                               <label className="control-label col-sm-2">Confirm Password:</label>
+                               <div className="col-sm-10">
+                                   <input type="password" name="retyped_password" className="form-control" placeholder="Confirm paswword" 
+                                    value={this.state.retyped_password} onChange={this.inputHandler}/>
                                </div>
                            </div>
                            <div className="modal-footer">
                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                               <button type="submit" className="btn btn-primary">Send Email</button>
+                               <button type="submit" className="btn btn-primary">Change password</button>
                            </div>
                        </form>
                    </div>
@@ -66,4 +76,4 @@ class ResetPassword extends Component {
         );
     }
 }
-export default ResetPassword;
+export default ChangePassword;

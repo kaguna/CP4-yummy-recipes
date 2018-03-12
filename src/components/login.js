@@ -3,6 +3,7 @@ import {panel_details,forgot_pass } from '../App.css';
 import {toast} from 'react-toastify'
 import Toaster from './toasterSuccess'
 import axios from 'axios'
+import ResetPassword from './reset_password';
 
 import { Redirect } from 'react-router'
 class Login extends Component {
@@ -23,6 +24,7 @@ class Login extends Component {
             .then(response => {
                 toast.success(response.data.message);
                 window.localStorage.setItem("username", response.data.username);
+                window.localStorage.setItem("email", response.data.email);
                 window.localStorage.setItem("token", response.data.access_token);
                 this.props.history.push("/home");
             })
@@ -40,12 +42,13 @@ class Login extends Component {
         return (
             <div className="container">
                     <Toaster/>
+                    <ResetPassword/>
                 <div className="panels_detail col-sm-offset-3 col-sm-6">
                     <div className="panel panel-info">
                         <div className="panel-heading">
                             <div className="panel-title">Login</div>
                             <div className="forgot_pass">
-                                <a href="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">
+                                <a href="#resetpassword" data-toggle="modal" data-target="#resetpassword">
                                     Forgot password?</a>
                             </div>
                         </div>
@@ -82,34 +85,6 @@ class Login extends Component {
                                     You don't have an account yet? Register <a href="/register">here</a>
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                </div>
-                <div className="modal fade" id="exampleModalCenter" tabindex = "-1" role="dialog"
-                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div className="modal-dialog" role="document">
-                        <div className="modal-content">
-                            <div class="modal-header">
-                                <h5 className="modal-title" id="exampleModalLongTitle">Email login credetials</h5>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div className="modal-body">
-
-                                <form className="form-horizontal">
-                                    <div className="form-group">
-                                        <label className="control-label col-sm-2">Email:</label>
-                                        <div className="col-sm-10">
-                                            <input type="email" className="form-control" placeholder="Enter email"/>
-                                        </div>
-                                    </div>
-                                    <div className="modal-footer">
-                                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" className="btn btn-primary">Send Email</button>
-                                    </div>
-                                </form>
-                            </div>
                         </div>
                     </div>
                 </div>

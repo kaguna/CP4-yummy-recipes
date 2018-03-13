@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axiosInstance from '../AxiosInstance'
 import Home from './Home';
 class ChangePassword extends Component {
     constructor(props){
@@ -14,11 +14,9 @@ class ChangePassword extends Component {
 
     changePasswordHandler = (event) => {
         const {password, retyped_password} = this.state;
-        const header = {headers:{'x-access-token': window.localStorage.getItem('token')},
-            content_type: 'application/json'};
         event.preventDefault();
         let email= window.localStorage.getItem("email")
-        axios.put("http://127.0.0.1:5000/auth/reset_password", {email, password, retyped_password}, header)
+        axiosInstance.put("/auth/reset_password", {email, password, retyped_password})
             .then(response => {
                 this.setState({mess: response.data.message, error: "",});
             })

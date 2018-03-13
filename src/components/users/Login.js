@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {panel_details,forgot_pass } from '../../App.css';
 import {toast} from 'react-toastify'
 import Toaster from '../ToasterSuccess'
-import axios from 'axios'
+import axiosInstance from '../../AxiosInstance'
 import ResetPassword from '../ResetPassword';
 
 import { Redirect } from 'react-router'
@@ -20,13 +20,13 @@ class Login extends Component {
     loginHandler = (event) => {
         const {email,password} = this.state;
         event.preventDefault();
-        axios.post("http://127.0.0.1:5000/auth/login", {email, password})
+        axiosInstance.post("/auth/login", {email, password})
             .then(response => {
                 toast.success(response.data.message);
                 window.localStorage.setItem("username", response.data.username);
                 window.localStorage.setItem("email", response.data.email);
                 window.localStorage.setItem("token", response.data.access_token);
-                this.props.history.push("./categories/Home");
+                this.props.history.push("./Home");
             })
             .catch(error => {
                 if (error.response) {

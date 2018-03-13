@@ -12,6 +12,9 @@
     font-size: 100%;
     padding: 10px;
 }
+.procedure {
+  margin: .5em;
+}
 
 .action_buttons{
   margin-right: 1.5em;

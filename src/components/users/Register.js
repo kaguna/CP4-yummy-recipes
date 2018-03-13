@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axiosInstance from '../../AxiosInstance'
 import {panel_details,forgot_pass } from '../../App.css'
 import { Redirect } from 'react-router'
 class Register extends Component {
@@ -21,7 +21,7 @@ class Register extends Component {
         }
         else
         {
-            axios.post("http://127.0.0.1:5000/auth/register", {email, username, password})
+            axiosInstance.post("/auth/register", {email, username, password})
                 .then(response => {
                     this.setState({mess: response.data.message, redirect: true});
                 })

@@ -1,10 +1,11 @@
 .panels_detail{
     margin-top:100px;
 }
-.forgot_pass{
+.forgotPass a{
     float:right;
-    font-size: 90%;
+    font-size: 1.1em;
     position: relative;
+    color: rgb(240, 248, 255);
     top:-10px
 }
 .category_buttons a{

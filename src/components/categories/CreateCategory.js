@@ -1,68 +1,88 @@
 import React, { Component } from 'react';
-import axiosInstance from '../../AxiosInstance'
-import Home from '../Home';
+import axiosInstance from '../../common/AxiosInstance';
+
 class CreateCategory extends Component {
-    constructor(props){
-        super(props);
-        this.state = { category_name: ""}
-    }
+  constructor(props) {
+    super(props);
+    this.state = { errorMessage: '', successMessage: '' };
+  }
 
     inputHandler = (event) => {
-        const {name, value} = event.target;
-        this.setState({[name]: value});
+      const { name, value } = event.target;
+      this.setState({ [name]: value });
     };
 
     createCategoryHandler = (event) => {
-        const {category_name} = this.state;
-        event.preventDefault();
-            axiosInstance.post("/categories/", {category_name})
-            .then(response => {
-                this.setState({mess: response.data.message, error: "",});
-                this.props.categoryAfterCreation();
-            })
-            .catch(error => {
-                if (error.response) {
-                    this.setState({error: error.response.data.message, mess: ""});
-                    console.log(error.response.data.message)
-                } else if (error.request) {
-                    this.setState({error:"Can't connect to the server.Please check your connection and try again.", mess: ""});
-                }
+      const categoryName = event.target.elements.categoryName.value;
+      const categoryDetails = { category_name: categoryName };
+      event.preventDefault();
+      axiosInstance.post('/categories/', categoryDetails)
+        .then((response) => {
+          this.setState({ successMessage: response.data.message, errorMessage: '' });
+          this.props.categoryAfterCreation();
+        })
+        .catch((error) => {
+          if (error.response) {
+            this.setState({ errorMessage: error.response.data.message, successMessage: '' });
+          } else if (error.request) {
+            this.setState({
+              errorMessage: 'Cant connect to the server.Please check your connection and try again.',
+              successMessage: '',
             });
+          }
+        });
+      event.target.elements.categoryName.value = '';
     };
+    resetHandler = (event) => {
+      this.setState({ errorMessage: '', successMessage: '' });
+    }
     render() {
-        return (
-            <div className="modal fade" id="createcategory" tabindex = "-1" role="dialog"
-                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                        <div class="modal-header">
-                            <h5 className="modal-title" id="exampleModalLongTitle">Create category</h5>
-                        </div>
-                        <div className="modal-body">
-                            {this.state.mess?
-                            <div className="alert alert-success">{this.state.mess}</div>: ""}
-                            {this.state.error?
-                                <div className="alert alert-danger">{this.state.error}</div>: ""}
-                            <form className="form-horizontal" onSubmit={this.createCategoryHandler}>
-                                <div className="form-group">
-                                    <label className="control-label col-sm-3">Category Name:</label>
-                                    <div className="col-sm-9">
-                                        <input type="text" name="category_name" className="form-control" placeholder="Enter Category name"
-                                               value={this.state.category_name} onChange={this.inputHandler}/>
-                                    </div>
-                                </div>
-                                <div className="modal-footer">
-                                    <button type="submit" className="btn btn-danger" data-dismiss="modal">Close</button>
-                                    <button type="submit" className="btn btn-primary">
-                                        <i class="glyphicon glyphicon-plus"></i> Add Category
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+      const { successMessage, errorMessage } = this.state;
+      return (
+        <div
+          className="modal fade"
+          id="createcategory"
+          tabIndex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLongTitle">Create category</h5>
+              </div>
+              <div className="modal-body">
+                {successMessage ?
+                  <div className="alert alert-success">{successMessage}</div> : ''}
+                {errorMessage ?
+                  <div className="alert alert-danger">{errorMessage}</div> : ''}
+                <form className="form-horizontal" onSubmit={this.createCategoryHandler}>
+                  <div className="form-group">
+                    <label className="control-label col-sm-3">Category Name:</label>
+                    <div className="col-sm-9">
+                      <input
+                        type="text"
+                        name="categoryName"
+                        className="form-control"
+                        placeholder="Enter Category name"
+                        onChange={this.inputHandler}
+                      />
                     </div>
-                </div>
+                  </div>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={this.resetHandler}>Close</button>
+                    <button type="submit" className="btn btn-primary">
+                      <i className="glyphicon glyphicon-plus" /> Add Category
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
-        );
+          </div>
+        </div>
+
+      );
     }
 }
 export default CreateCategory;

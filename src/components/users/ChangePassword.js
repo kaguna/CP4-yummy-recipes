@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axiosInstance from '../../common/AxiosInstance';
 
-class CreateRecipe extends Component {
+class ChangePassword extends Component {
   constructor(props) {
     super(props);
     this.state = { successMessage: '', errorMessage: '' };
@@ -12,15 +12,16 @@ class CreateRecipe extends Component {
       this.setState({ [name]: value });
     };
 
-    createRecipeHandler = (event) => {
-      const recipeName = event.target.elements.recipeName.value;
-      const recipeProcedure = event.target.elements.recipeProcedure.value;
-      const recipe = { recipe_name: recipeName, recipe_procedure: recipeProcedure };
+    changePasswordHandler = (event) => {
+      const password = event.target.elements.password.value;
+      const retypedPassword = event.target.elements.retypedPassword.value;
+      const email = window.localStorage.getItem('email');
+      const userDetails = { password: password, retyped_password: retypedPassword, email: email };
       event.preventDefault();
-      axiosInstance.post(`/category/${this.props.categoryId}/recipes/`, recipe)
+      axiosInstance.put('/auth/reset_password', userDetails)
         .then((response) => {
-          this.setState({ successMessage: response.data.message, errorMessage: '' });
-          this.props.recipeAfterCreation();
+          this.setState({ successMessage: response.data.message,
+            errorMessage: '' });
         })
         .catch((error) => {
           if (error.response) {
@@ -30,10 +31,9 @@ class CreateRecipe extends Component {
               successMessage: '' });
           }
         });
-      event.target.elements.recipeName.value = '';
-      event.target.elements.recipeProcedure.value = '';
+      event.target.elements.password.value = '';
+      event.target.elements.retypedPassword.value = '';
     };
-
     resetHandler = (event) => {
       this.setState({ successMessage: '', errorMessage: '' });
     }
@@ -42,7 +42,7 @@ class CreateRecipe extends Component {
       return (
         <div
           className="modal fade"
-          id="createRecipe"
+          id="changepassword"
           tabIndex="-1"
           role="dialog"
           aria-labelledby="exampleModalCenterTitle"
@@ -51,44 +51,51 @@ class CreateRecipe extends Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLongTitle">Create Recipe</h5>
+                <h5 className="modal-title" id="exampleModalLongTitle">Change password here</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
               <div className="modal-body">
                 {successMessage ?
                   <div className="alert alert-success">{successMessage}</div> : ''}
                 {errorMessage ?
                   <div className="alert alert-danger">{errorMessage}</div> : ''}
-                <form className="form-horizontal" onSubmit={this.createRecipeHandler}>
+
+                <form className="form-horizontal" onSubmit={this.changePasswordHandler}>
                   <div className="form-group">
-                    <label className="control-label col-sm-3">Recipe Name:</label>
-                    <div className="col-sm-9">
+                    <label className="control-label col-sm-2">New password:</label>
+                    <div className="col-sm-10">
                       <input
-                        type="text"
-                        name="recipeName"
+                        type="password"
+                        name="password"
                         className="form-control"
-                        placeholder="Enter recipe name"
+                        placeholder="Enter new password"
                         onChange={this.inputHandler}
                       />
                     </div>
                   </div>
                   <div className="form-group">
-                    <label className="control-label col-sm-3">Recipe Procedure:</label>
-                    <div className="col-sm-9">
-                      <textarea
-                        rows="6"
-                        type="text"
-                        name="recipeProcedure"
+                    <label className="control-label col-sm-2">Confirm Password:</label>
+                    <div className="col-sm-10">
+                      <input
+                        type="password"
+                        name="retypedPassword"
                         className="form-control"
-                        placeholder="Enter recipe procedure"
+                        placeholder="Confirm paswword"
                         onChange={this.inputHandler}
                       />
                     </div>
                   </div>
                   <div className="modal-footer">
-                    <button type="submit" className="btn btn-danger" data-dismiss="modal" onClick={this.resetHandler}>Close</button>
-                    <button type="submit" className="btn btn-primary">
-                      <i className="glyphicon glyphicon-plus" /> Add Recipe
+                    <button
+                      type="button"
+                      className="btn btn-danger"
+                      data-dismiss="modal"
+                      onClick={this.resetHandler}
+                    >Close
                     </button>
+                    <button type="submit" className="btn btn-primary">Change password</button>
                   </div>
                 </form>
               </div>
@@ -98,4 +105,4 @@ class CreateRecipe extends Component {
       );
     }
 }
-export default CreateRecipe;
+export default ChangePassword;

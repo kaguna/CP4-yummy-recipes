@@ -5,12 +5,12 @@ import axios from 'axios';
  */
 const axiosInstance = axios.create({
   baseURL: 'http://127.0.0.1:5000',
-  headers: {'x-access-token': `${localStorage.getItem('token')}` },
+  headers: { 'x-access-token': `${localStorage.getItem('token')}` },
 });
 
 axiosInstance.interceptors.request.use((config) => {
-    if (localStorage.getItem('token') && config.headers.Authorization === 'null') {
-        config.headers.Authorization = `${localStorage.getItem('token')}`;
+  if (localStorage.getItem('token') && config.headers['x-access-token'] === 'null') {
+    config.headers['x-access-token'] = `${localStorage.getItem('token')}`;
   }
   return config;
 });

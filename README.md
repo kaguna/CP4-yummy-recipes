@@ -14,7 +14,7 @@ $ git@github.com:kaguna/CP4-yummy-recipes.git
 $ cd CP4-yummy-recipes
 ```
 
-## Installing Dependencies and saving
+## Installing Dependencies and Saving
 ```
 $ npm install <dependency> --save
 ```

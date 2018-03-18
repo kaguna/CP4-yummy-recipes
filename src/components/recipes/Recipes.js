@@ -126,7 +126,7 @@ class Recipes extends Component {
                   <div className="row">
                     <div className="col-sm-3">
                       <a href="/home" className="btn btn-primary"><i className="glyphicon glyphicon-menu-left" />
-                                        Back to categories
+                                        Back to Categories
                       </a>
                     </div>
                   </div>

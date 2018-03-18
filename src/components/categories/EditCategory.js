@@ -4,7 +4,7 @@ import axiosInstance from '../../common/AxiosInstance';
 class EditCategory extends Component {
   constructor(props) {
     super(props);
-    this.state = { errorMessage: '' };
+    this.state = { errorMessage: '', category_name: '' };
   }
     inputHandler = (event) => {
       event.preventDefault();

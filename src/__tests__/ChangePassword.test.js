@@ -2,13 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import Login from '../components/users/Login';
+import ChangePassword from '../components/users/ChangePassword';
 
-describe('Login component', () => {
-  const wrapper = shallow(<Login />);
+describe('Change password component', () => {
+  const wrapper = shallow(<ChangePassword />);
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });
-

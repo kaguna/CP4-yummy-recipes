@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`All the recipes component renders properly 1`] = `
+<div
+  id="all_recipes"
+>
+  <Header />
+  <Toaster />
+  <CreateRecipe
+    categoryId={1}
+    recipeAfterCreation={[Function]}
+  />
+  <div
+    className="container"
+  >
+    <div
+      className="col-sm-14"
+    >
+      <div
+        className="panel panel"
+      >
+        <div
+          className="panel-body"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-sm-2"
+            >
+              <h5>
+                <i
+                  className="glyphicon glyphicon-list"
+                />
+                Recipe List 
+                <span
+                  className="label label-info"
+                />
+              </h5>
+            </div>
+            <div
+              className="col-sm-7"
+            >
+              <div
+                className="form-group has-feedback has-search"
+              >
+                <span
+                  className="glyphicon glyphicon-search form-control-feedback"
+                />
+                <input
+                  className="form-control"
+                  name="keywordSearch"
+                  onChange={[Function]}
+                  placeholder="Search for a recipe..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              className="col-sm-3"
+            >
+              <a
+                className="btn btn-primary"
+                data-target="#createRecipe"
+                data-toggle="modal"
+                href="#create_recipe"
+              >
+                <i
+                  className="glyphicon glyphicon-plus"
+                />
+                Create Recipe
+              </a>
+            </div>
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="col-sm-3"
+            >
+              <a
+                className="btn btn-primary"
+                href="/home"
+              >
+                <i
+                  className="glyphicon glyphicon-menu-left"
+                />
+                Back to Categories
+              </a>
+            </div>
+          </div>
+          <hr />
+          <div />
+          <label />
+          <div
+            className="row"
+          />
+        </div>
+        <div
+          className="panel-footer bg-dark"
+        >
+          <Pagination
+            bsClass="pagination"
+          >
+            <Pagination
+              bsClass="pagination"
+              bsSize="large"
+            />
+          </Pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

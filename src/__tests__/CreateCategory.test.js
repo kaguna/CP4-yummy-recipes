@@ -2,13 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import Login from '../components/users/Login';
+import CreateCategory from '../components/categories/CreateCategory';
 
-describe('Login component', () => {
-  const wrapper = shallow(<Login />);
+describe('Create category component', () => {
+  const wrapper = shallow(<CreateCategory />);
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });
-

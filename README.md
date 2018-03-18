@@ -1,3 +1,4 @@
+
 # CP4 Yummy Recipes
 
 Yummy Recipes application using react library that allows a user do the following:
@@ -6,11 +7,11 @@ Yummy Recipes application using react library that allows a user do the followin
 - Create, update, view and delete a category.
 - Create, update, view and delete a recipe.
 
-## Testing The Application
-
-
+## Clone The Github Repository
+Clone the repo first and Change the directory to the application's directory:
 ```
-$ git@github.com:kaguna/CP4-yummy-recipes.git
+$ git clone git@github.com:kaguna/CP4-yummy-recipes.git
+
 $ cd CP4-yummy-recipes
 ```
 
@@ -27,4 +28,8 @@ npm start
 
 ## Running Tests
 ```
-npm test
+$ npm run test --coverage
+```
+## Test The Application Online in Heroku:
+Click on this link:
+[Yummy Recipes Online](https://react-yummy-recipes.herokuapp.com/)

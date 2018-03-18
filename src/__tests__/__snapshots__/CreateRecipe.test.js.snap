@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create recipes component renders properly 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="exampleModalCenterTitle"
+  className="modal fade"
+  id="createRecipe"
+  role="dialog"
+  tabIndex="-1"
+>
+  <div
+    className="modal-dialog"
+    role="document"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h5
+          className="modal-title"
+          id="exampleModalLongTitle"
+        >
+          Create Recipe
+        </h5>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <form
+          className="form-horizontal"
+          onSubmit={[Function]}
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="control-label col-sm-3"
+            >
+              Recipe Name:
+            </label>
+            <div
+              className="col-sm-9"
+            >
+              <input
+                className="form-control"
+                name="recipeName"
+                onChange={[Function]}
+                placeholder="Enter recipe name"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              className="control-label col-sm-3"
+            >
+              Recipe Procedure:
+            </label>
+            <div
+              className="col-sm-9"
+            >
+              <textarea
+                className="form-control"
+                name="recipeProcedure"
+                onChange={[Function]}
+                placeholder="Enter recipe procedure"
+                rows="6"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="modal-footer"
+          >
+            <button
+              className="btn btn-danger"
+              data-dismiss="modal"
+              onClick={[Function]}
+              type="submit"
+            >
+              Close
+            </button>
+            <button
+              className="btn btn-primary"
+              type="submit"
+            >
+              <i
+                className="glyphicon glyphicon-plus"
+              />
+               Add Recipe
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

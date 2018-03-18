@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create category component renders properly 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="exampleModalCenterTitle"
+  className="modal fade"
+  id="createcategory"
+  role="dialog"
+  tabIndex="-1"
+>
+  <div
+    className="modal-dialog"
+    role="document"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h5
+          className="modal-title"
+          id="exampleModalLongTitle"
+        >
+          Create Category
+        </h5>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <form
+          className="form-horizontal"
+          onSubmit={[Function]}
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="control-label col-sm-3"
+            >
+              Category Name:
+            </label>
+            <div
+              className="col-sm-9"
+            >
+              <input
+                className="form-control"
+                name="categoryName"
+                onChange={[Function]}
+                placeholder="Enter Category name"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="modal-footer"
+          >
+            <button
+              className="btn btn-danger"
+              data-dismiss="modal"
+              onClick={[Function]}
+              type="button"
+            >
+              Close
+            </button>
+            <button
+              className="btn btn-primary"
+              type="submit"
+            >
+              <i
+                className="glyphicon glyphicon-plus"
+              />
+               Add Category
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

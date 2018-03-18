@@ -50,7 +50,7 @@ class CreateCategory extends Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLongTitle">Create category</h5>
+                <h5 className="modal-title" id="exampleModalLongTitle">Create Category</h5>
               </div>
               <div className="modal-body">
                 {successMessage ?

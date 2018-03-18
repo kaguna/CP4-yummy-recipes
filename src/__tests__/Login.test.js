@@ -10,5 +10,8 @@ describe('Login component', () => {
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
+  it('has divs', () => {
+    expect(wrapper.find('div')).toHaveLength(14);
+  });
 });
 

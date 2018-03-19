@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/kaguna/CP4-yummy-recipes.svg?branch=ch-Refactor-code-for-eslint-standards-156048077)](https://travis-ci.org/kaguna/CP4-yummy-recipes)
 
 # CP4 Yummy Recipes
 

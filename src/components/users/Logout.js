@@ -7,7 +7,7 @@ class Logout extends Component {
     logoutHandler = () => {
       window.localStorage.clear();
       window.location.reload();
-      this.props.history.push('./Login');
+      window.location.assign('./Login');
     };
     componentDidMount() {
       this.logoutHandler();

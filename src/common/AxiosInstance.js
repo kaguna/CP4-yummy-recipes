@@ -4,7 +4,7 @@ import axios from 'axios';
  * Component for handling Api calls without duplicating in each file.
  */
 const axiosInstance = axios.create({
-  baseURL: 'http://127.0.0.1:5000',
+  baseURL: 'https://recipes-yummy-api.herokuapp.com',
   headers: { 'Content-Type': 'application/json', 'x-access-token': `${localStorage.getItem('token')}` },
 });
 

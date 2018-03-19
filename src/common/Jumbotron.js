@@ -1,3 +1,6 @@
+/**
+ * This serves as a landing page.
+ */
 import React, { Component } from 'react';
 import pic1 from '../common/images/soup.jpg';
 import pic2 from '../common/images/Mint-Dark-Chocolate-recipe.jpg';

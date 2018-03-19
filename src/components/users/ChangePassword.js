@@ -1,3 +1,6 @@
+/**
+ * This is a modal component to change the password after login in.
+ */
 import React, { Component } from 'react';
 import axiosInstance from '../../common/AxiosInstance';
 

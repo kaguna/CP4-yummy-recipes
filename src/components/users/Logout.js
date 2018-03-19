@@ -1,3 +1,6 @@
+/**
+ * This destroys the user session.
+ */
 import React, { Component } from 'react';
 
 class Logout extends Component {

@@ -1,3 +1,6 @@
+/**
+ * This is a modal component to edit a category name and the procedure.
+ */
 import React, { Component } from 'react';
 import axiosInstance from '../../common/AxiosInstance';
 

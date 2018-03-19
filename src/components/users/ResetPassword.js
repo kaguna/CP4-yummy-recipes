@@ -1,3 +1,6 @@
+/**
+ * This is a modal component reset a password via email.
+ */
 import React, { Component } from 'react';
 import Loader from 'react-loader-spinner';
 import axiosInstance from '../../common/AxiosInstance';

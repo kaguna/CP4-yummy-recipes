@@ -1,3 +1,6 @@
+/**
+ * This is a modal component to authenticate the user.
+ */
 import React, { Component } from 'react';
 import { toast } from 'react-toastify';
 import Toaster from '../../common/ToasterSuccess';

@@ -1,3 +1,6 @@
+/**
+ * This file acts as a landing page, and shows all the categories for the user.
+ */
 import React, { Component } from 'react';
 import { Pagination } from 'react-bootstrap';
 import Toaster from './ToasterSuccess';

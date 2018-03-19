@@ -1,3 +1,6 @@
+/**
+ * This is a modal component for user to create an account.
+ */
 import React, { Component } from 'react';
 import { toast } from 'react-toastify';
 import axiosInstance from '../../common/AxiosInstance';

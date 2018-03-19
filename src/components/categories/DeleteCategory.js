@@ -1,3 +1,6 @@
+/**
+ * This is a modal component to delete a category.
+ */
 import React, { Component } from 'react';
 import axiosInstance from '../../common/AxiosInstance';
 

@@ -1,3 +1,6 @@
+/**
+ * This shows the procedure to prepare the recipe.
+ */
 import React, { Component } from 'react';
 
 class Viewprocedure extends Component {

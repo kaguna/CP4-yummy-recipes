@@ -1,3 +1,6 @@
+/**
+ * This is a modal component to create a recipe.
+ */
 import React, { Component } from 'react';
 import axiosInstance from '../../common/AxiosInstance';
 

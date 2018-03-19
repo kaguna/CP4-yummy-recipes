@@ -1,3 +1,6 @@
+/**
+ * This provides the recipe deletion confirmation modal.
+ */
 import React, { Component } from 'react';
 import axiosInstance from '../../common/AxiosInstance';
 

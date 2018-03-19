@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/kaguna/CP4-yummy-recipes.svg?branch=ch-Refactor-code-for-eslint-standards-156048077)](https://travis-ci.org/kaguna/CP4-yummy-recipes)
-[![Coverage Status](https://coveralls.io/repos/github/kaguna/CP4-yummy-recipes/badge.svg?branch=ch-Refactor-code-for-eslint-standards-156048077)](https://coveralls.io/github/kaguna/CP4-yummy-recipes?branch=ch-Refactor-code-for-eslint-standards-156048077)
+[![Coverage Status](https://coveralls.io/repos/github/kaguna/CP4-yummy-recipes/badge.svg?branch=ch-Refactor-code-for-eslint-standards-156048077&V=0)](https://coveralls.io/github/kaguna/CP4-yummy-recipes?branch=ch-Refactor-code-for-eslint-standards-156048077&V=0)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/918469d219f747c1aef89b592244bbda)](https://www.codacy.com/app/kaguna/CP4-yummy-recipes?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kaguna/CP4-yummy-recipes&amp;utm_campaign=Badge_Grade)
 # CP4 Yummy Recipes
 

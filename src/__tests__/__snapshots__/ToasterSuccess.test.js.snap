@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast success component renders properly 1`] = `
+<ToastContainer
+  autoClose={5000}
+  bodyClassName=""
+  className={null}
+  closeButton={
+    <DefaultCloseButton
+      ariaLabel="close"
+    />
+  }
+  closeOnClick={true}
+  hideProgressBar={true}
+  newestOnTop={false}
+  pauseOnHover={true}
+  position="top-right"
+  progressClassName=""
+  style={null}
+  toastClassName=""
+  transition={[Function]}
+  type="default"
+/>
+`;

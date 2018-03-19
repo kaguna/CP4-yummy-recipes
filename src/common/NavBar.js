@@ -3,6 +3,9 @@ import ChangePassword from '../components/users/ChangePassword';
 
 class Header extends Component {
   render() {
+    if (!localStorage.token) {
+      window.location.assign('/login');
+    }
     return (
       <nav className="navbar navbar-default">
         <ChangePassword />
@@ -29,11 +32,11 @@ class Header extends Component {
                   <span id="username"> {window.localStorage.getItem('username')}</span>
                   <span className="caret" />
                 </span>
-                  </a>
+              </a>
                 <ul className="dropdown-menu" aria-labelledby="profile">
                   <li><a href="#changepassword" data-toggle="modal" data-target="#changepassword">
                     <i className="glyphicon glyphicon-edit" /> Change password
-                      </a>
+                  </a>
                   </li>
                   <li role="separator" className="divider" />
                   <li><a href="/logout"><i className="glyphicon glyphicon-log-out" /> Logout</a></li>

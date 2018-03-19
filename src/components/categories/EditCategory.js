@@ -70,7 +70,7 @@ class EditCategory extends Component {
               </div>
               <div className="modal-footer">
                 <button className="btn btn-danger" data-dismiss="modal">Close</button>
-                <button className="btn btn-primary" onClick={this.editCategoryHandler}>
+                <button className="btn btn-primary" data-dismiss="modal" onClick={this.editCategoryHandler}>
                   <i className="glyphicon glyphicon-edit" /> Edit Category
                 </button>
               </div>

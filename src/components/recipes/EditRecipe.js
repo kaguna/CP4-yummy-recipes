@@ -1,3 +1,6 @@
+/**
+ * This is a modal component to edit the recipe and the recipe procedure.
+ */
 import React, { Component } from 'react';
 import axiosInstance from '../../common/AxiosInstance';
 

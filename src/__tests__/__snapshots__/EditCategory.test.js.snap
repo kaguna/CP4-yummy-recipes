@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login component renders properly 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="exampleModalCenterTitle"
+  className="modal fade"
+  role="dialog"
+  tabIndex="-1"
+>
+  <div
+    className="modal-dialog"
+    role="document"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h5
+          className="modal-title"
+          id="exampleModalLongTitle"
+        >
+          Edit category (
+          muthere
+          )
+        </h5>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="control-label col-sm-3"
+          >
+            New Category Name:
+          </label>
+          <div
+            className="col-sm-8"
+          >
+            <input
+              className="form-control"
+              defaultValue="muthere"
+              name="category_name"
+              onChange={[Function]}
+              placeholder="Enter New Category name"
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="modal-footer"
+      >
+        <button
+          className="btn btn-danger"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+        <button
+          className="btn btn-primary"
+          data-dismiss="modal"
+          onClick={[Function]}
+        >
+          <i
+            className="glyphicon glyphicon-edit"
+          />
+           Edit Category
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

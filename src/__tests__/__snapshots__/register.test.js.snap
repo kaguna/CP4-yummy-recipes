@@ -4,11 +4,12 @@ exports[`Register component renders properly 1`] = `
 <div
   className="container"
 >
+  <Toaster />
   <div
     className="panels_detail col-sm-offset-3 col-sm-6"
   >
     <div
-      className="panel panel-info"
+      className="panel panel-primary"
     >
       <div
         className="panel-heading"
@@ -45,12 +46,10 @@ exports[`Register component renders properly 1`] = `
             >
               <input
                 className="form-control"
-                id="reg_email"
                 name="email"
                 onChange={[Function]}
                 placeholder="Enter email"
                 type="email"
-                value=""
               />
             </div>
           </div>
@@ -67,12 +66,10 @@ exports[`Register component renders properly 1`] = `
             >
               <input
                 className="form-control"
-                id="reg_username"
                 name="username"
                 onChange={[Function]}
                 placeholder="Enter username"
                 type="text"
-                value=""
               />
             </div>
           </div>
@@ -89,12 +86,10 @@ exports[`Register component renders properly 1`] = `
             >
               <input
                 className="form-control"
-                id="reg_password"
                 name="password"
                 onChange={[Function]}
                 placeholder="Enter password"
                 type="password"
-                value=""
               />
             </div>
           </div>
@@ -111,12 +106,10 @@ exports[`Register component renders properly 1`] = `
             >
               <input
                 className="form-control"
-                id="c_reg_password"
-                name="c_password"
+                name="confirmPassword"
                 onChange={[Function]}
                 placeholder="Confirm password"
                 type="password"
-                value=""
               />
             </div>
           </div>
@@ -127,7 +120,7 @@ exports[`Register component renders properly 1`] = `
               className="col-sm-offset-2 col-sm-12"
             >
               <button
-                className="btn btn-default"
+                className="btn btn-primary"
                 type="submit"
               >
                 <i

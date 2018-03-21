@@ -10,7 +10,7 @@ exports[`Login component renders properly 1`] = `
     className="panels_detail col-sm-offset-3 col-sm-6"
   >
     <div
-      className="panel panel-info"
+      className="panel panel-primary"
     >
       <div
         className="panel-heading"
@@ -21,14 +21,14 @@ exports[`Login component renders properly 1`] = `
           Login
         </div>
         <div
-          className="forgot_pass"
+          className="forgotPass"
         >
           <a
             data-target="#resetpassword"
             data-toggle="modal"
             href="#resetpassword"
           >
-            Forgot password?
+            Forgot Password?
           </a>
         </div>
       </div>
@@ -52,12 +52,10 @@ exports[`Login component renders properly 1`] = `
             >
               <input
                 className="form-control"
-                id="reg_email"
                 name="email"
                 onChange={[Function]}
                 placeholder="Enter email"
                 type="email"
-                value=""
               />
             </div>
           </div>
@@ -74,12 +72,10 @@ exports[`Login component renders properly 1`] = `
             >
               <input
                 className="form-control"
-                id="reg_password"
                 name="password"
                 onChange={[Function]}
                 placeholder="Enter password"
                 type="password"
-                value=""
               />
             </div>
           </div>
@@ -90,7 +86,7 @@ exports[`Login component renders properly 1`] = `
               className="col-sm-offset-2 col-sm-12"
             >
               <button
-                className="btn btn-default"
+                className="btn btn-primary"
                 type="submit"
               >
                 <i
@@ -103,7 +99,7 @@ exports[`Login component renders properly 1`] = `
           <div
             className="col-sm-offset-2 col-sm-12"
           >
-            You don't have an account yet? Register 
+            You dont have an account yet? Register 
             <a
               href="/register"
             >

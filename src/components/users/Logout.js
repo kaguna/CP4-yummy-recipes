@@ -1,20 +1,23 @@
-import React,{Component} from 'react'
+/**
+ * This destroys the user session.
+ */
+import React, { Component } from 'react';
 
-class Logout extends Component{
+class Logout extends Component {
     logoutHandler = () => {
-        window.localStorage.clear();
-        this.props.history.push("/Login")
-
+      window.localStorage.clear();
+      window.location.reload();
+      window.location.assign('./Login');
     };
     componentDidMount() {
-        this.logoutHandler();
+      this.logoutHandler();
     }
-    render(){
-        return (
-            <span>
+    render() {
+      return (
+        <span>
                 logging out...
-            </span>
-        );
+        </span>
+      );
     }
 }
-export default Logout
+export default Logout;

@@ -2,16 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import Login from '../components/users/Login';
+import Jumbotron from '../common/Jumbotron';
 
-describe('Login component', () => {
-  const wrapper = shallow(<Login />);
+describe('Landing page component', () => {
+  const wrapper = shallow(<Jumbotron />);
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
-  it('has divs', () => {
-    expect(wrapper.find('div')).toHaveLength(14);
-  });
 });
-

@@ -2,16 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import Login from '../components/users/Login';
+import ToasterSuccess from '../common/ToasterSuccess';
 
-describe('Login component', () => {
-  const wrapper = shallow(<Login />);
+describe('ToasterSuccess component', () => {
+  const wrapper = shallow(<ToasterSuccess />);
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
-  it('has divs', () => {
-    expect(wrapper.find('div')).toHaveLength(14);
-  });
 });
-

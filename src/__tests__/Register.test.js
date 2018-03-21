@@ -6,7 +6,6 @@ import Register from '../components/users/Register';
 
 describe('Register component', () => {
   const wrapper = shallow(<Register />);
-  const preventDefault = jest.fn();
 
   it('renders properly', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -14,5 +13,5 @@ describe('Register component', () => {
 
   it('has divs', () => {
     expect(wrapper.find('div')).toHaveLength(18);
-  })
-})
+  });
+});

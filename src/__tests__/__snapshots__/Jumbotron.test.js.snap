@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing page component renders properly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="jumbotron"
+  >
+    <div
+      className="row"
+    >
+      <p
+        className="lead pull-right"
+      >
+        <a
+          className="btn btn-primary btn-lg"
+          href="/register"
+          role="button"
+        >
+          <i
+            className="glyphicon glyphicon-plus"
+          />
+           Register
+        </a>
+         
+        <a
+          className="btn btn-primary btn-lg"
+          href="/login"
+          role="button"
+        >
+          <i
+            className="glyphicon glyphicon-log-in"
+          />
+           Login
+        </a>
+      </p>
+    </div>
+    <div
+      className="row"
+    >
+      <h2
+        className="display-3"
+      >
+        Yummy Recipes
+      </h2>
+      <p
+        className="lead"
+      >
+        Welcome to the Yummy recipes management system. This enables you to manage you recipes and organize them in categories they belong to.
+      </p>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="carousel slide"
+        data-ride="carousel"
+        id="myCarousel"
+      >
+        <ol
+          className="carousel-indicators"
+        >
+          <li
+            className="active"
+            data-slide-to="0"
+            data-target="#myCarousel"
+          />
+          <li
+            data-slide-to="1"
+            data-target="#myCarousel"
+          />
+          <li
+            data-slide-to="2"
+            data-target="#myCarousel"
+          />
+        </ol>
+        <div
+          className="carousel-inner"
+        >
+          <div
+            className="item active"
+          >
+            <img
+              alt="Los Angeles"
+              src="soup.jpg"
+            />
+            <div
+              className="carousel-caption"
+            >
+              <h3>
+                Soup burger
+              </h3>
+              <p>
+                Supper delicious meal.
+              </p>
+            </div>
+          </div>
+          <div
+            className="item"
+          >
+            <img
+              alt="Chicago"
+              src="rice.jpg"
+            />
+            <div
+              className="carousel-caption"
+            >
+              <h3>
+                Mwea Rice
+              </h3>
+              <p>
+                Sweet scented rice.
+              </p>
+            </div>
+          </div>
+          <div
+            className="item"
+          >
+            <img
+              alt="New York"
+              src="Mint-Dark-Chocolate-recipe.jpg"
+            />
+            <div
+              className="carousel-caption"
+            >
+              <h3>
+                Chocolate
+              </h3>
+              <p>
+                Dark brown chocolate
+              </p>
+            </div>
+          </div>
+        </div>
+        <a
+          className="left carousel-control"
+          data-slide="prev"
+          href="#myCarousel"
+        >
+          <span
+            className="glyphicon glyphicon-chevron-left"
+          />
+          <span
+            className="sr-only"
+          >
+            Previous
+          </span>
+        </a>
+        <a
+          className="right carousel-control"
+          data-slide="next"
+          href="#myCarousel"
+        >
+          <span
+            className="glyphicon glyphicon-chevron-right"
+          />
+          <span
+            className="sr-only"
+          >
+            Next
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

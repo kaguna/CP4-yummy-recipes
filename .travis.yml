@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "node"
+cache:
+  directories:
+  - node_modules
+script:
+  - npm test -- -u --coverage
+after_success:
+  - coveralls < coverage/lcov.info

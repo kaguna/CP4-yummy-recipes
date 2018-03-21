@@ -1,0 +1,8 @@
+.DS_Store
+.idea/CP4-yummy-recipes.iml
+.idea/modules.xml
+.idea/workspace.xml
+package-lock.json
+node_modules/
+.idea/
+coverage/

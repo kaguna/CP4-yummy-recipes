@@ -1,0 +1,65 @@
+.panels_detail{
+    margin-top:100px;
+}
+.forgotPass a{
+    float:right;
+    font-size: 1.1em;
+    position: relative;
+    color: rgb(240, 248, 255);
+    top:-10px
+}
+.category_buttons a{
+    float: right;
+    font-size: 100%;
+    padding: 10px;
+}
+.procedure {
+  margin: .5em;
+}
+
+.action_buttons{
+  margin: .75em;
+}
+
+hr{
+    border-top: 20px single #8c8b8b;
+}
+
+body{
+    background-color: #ddd;
+    margin: 0;
+    height: 100vh;
+    background-size: cover;
+}
+
+.App {
+  text-align: center;
+}
+#username{
+    text-transform: capitalize;
+    font-weight: bolder;
+}
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

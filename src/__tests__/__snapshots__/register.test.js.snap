@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register component renders properly 1`] = `
+<div
+  className="container"
+>
+  <Toaster />
+  <div
+    className="panels_detail col-sm-offset-3 col-sm-6"
+  >
+    <div
+      className="panel panel-primary"
+    >
+      <div
+        className="panel-heading"
+      >
+        <div
+          className="panel-title"
+        >
+          <i
+            className="glyphicon glyphicon-plus"
+          />
+           Create Account
+        </div>
+      </div>
+      <div
+        className="panel-body"
+      >
+        <div
+          id="post_info"
+        />
+        <form
+          className="form-horizontal"
+          onSubmit={[Function]}
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="control-label col-sm-2"
+            >
+              Email:
+            </label>
+            <div
+              className="col-sm-10"
+            >
+              <input
+                className="form-control"
+                name="email"
+                onChange={[Function]}
+                placeholder="Enter email"
+                type="email"
+              />
+            </div>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              className="control-label col-sm-2"
+            >
+              Username
+            </label>
+            <div
+              className="col-sm-10"
+            >
+              <input
+                className="form-control"
+                name="username"
+                onChange={[Function]}
+                placeholder="Enter username"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              className="control-label col-sm-2"
+            >
+              Password:
+            </label>
+            <div
+              className="col-sm-10"
+            >
+              <input
+                className="form-control"
+                name="password"
+                onChange={[Function]}
+                placeholder="Enter password"
+                type="password"
+              />
+            </div>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              className="control-label col-sm-2"
+            >
+              Confirm Password:
+            </label>
+            <div
+              className="col-sm-10"
+            >
+              <input
+                className="form-control"
+                name="confirmPassword"
+                onChange={[Function]}
+                placeholder="Confirm password"
+                type="password"
+              />
+            </div>
+          </div>
+          <div
+            className="form-group"
+          >
+            <div
+              className="col-sm-offset-2 col-sm-12"
+            >
+              <button
+                className="btn btn-primary"
+                type="submit"
+              >
+                <i
+                  className="glyphicon glyphicon-user"
+                />
+                 Create Account
+              </button>
+            </div>
+          </div>
+          <div
+            className="col-sm-offset-2 col-sm-12"
+          >
+            Already have an account? Login 
+            <a
+              href="/login"
+            >
+              here
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit recipes component renders properly 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="exampleModalCenterTitle"
+  className="modal fade"
+  role="dialog"
+  tabIndex="-1"
+>
+  <div
+    className="modal-dialog"
+    role="document"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h5
+          className="modal-title"
+          id="exampleModalLongTitle"
+        >
+          Edit Recipes (
+          cool stuff
+          )
+        </h5>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="control-label col-sm-3"
+            >
+              New Recipe Name:
+            </label>
+            <div
+              className="col-sm-8"
+            >
+              <input
+                className="form-control"
+                defaultValue="cool stuff"
+                name="recipe_name"
+                onChange={[Function]}
+                placeholder="Enter New Recipe name"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              className="control-label col-sm-3"
+            >
+              Recipe Procedure:
+            </label>
+            <div
+              className="col-sm-9"
+            >
+              <textarea
+                className="form-control"
+                defaultValue="fghbjnk"
+                name="recipe_procedure"
+                onChange={[Function]}
+                placeholder="Enter recipe procedure"
+                rows="10"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="modal-footer"
+      >
+        <button
+          className="btn btn-danger"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+        <button
+          className="btn btn-primary"
+          data-dismiss="modal"
+          onClick={[Function]}
+        >
+          <i
+            className="glyphicon glyphicon-edit"
+          />
+           Edit Recipe
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

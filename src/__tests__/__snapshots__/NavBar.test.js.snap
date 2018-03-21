@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbarcomponent renders properly 1`] = `
+<nav
+  className="navbar navbar-default"
+>
+  <ChangePassword />
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="navbar-header"
+    >
+      <button
+        className="navbar-toggle"
+        data-target="#myNavbar"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="icon-bar"
+        />
+        <span
+          className="icon-bar"
+        />
+        <span
+          className="icon-bar"
+        />
+      </button>
+      <a
+        className="navbar-brand"
+        href=""
+      >
+        <i
+          className="glyphicon glyphicon-cutlery"
+        />
+         Yummy Recipes
+      </a>
+    </div>
+    <div
+      className="collapse navbar-collapse"
+      id="myNavbar"
+    >
+      <li
+        className="nav navbar-nav navbar-right"
+      >
+        <ul>
+          <li>
+            <a
+              aria-expanded="true"
+              aria-haspopup="true"
+              className="dropdown-toggle"
+              data-toggle="dropdown"
+              href=""
+              id="profile"
+            >
+              <span
+                className="glyphicon glyphicon-user"
+              >
+                <span
+                  id="username"
+                >
+                   
+                </span>
+                <span
+                  className="caret"
+                />
+              </span>
+            </a>
+            <ul
+              aria-labelledby="profile"
+              className="dropdown-menu"
+            >
+              <li>
+                <a
+                  data-target="#changepassword"
+                  data-toggle="modal"
+                  href="#changepassword"
+                >
+                  <i
+                    className="glyphicon glyphicon-edit"
+                  />
+                   Change password
+                </a>
+              </li>
+              <li
+                className="divider"
+                role="separator"
+              />
+              <li>
+                <a
+                  href="/logout"
+                >
+                  <i
+                    className="glyphicon glyphicon-log-out"
+                  />
+                   Logout
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </div>
+  </div>
+</nav>
+`;

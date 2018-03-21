@@ -32,7 +32,8 @@ exports[`All the recipes component renders properly 1`] = `
                 <i
                   className="glyphicon glyphicon-list"
                 />
-                Recipe List 
+                Recipe List
+                 
                 <span
                   className="label label-info"
                 />
@@ -87,6 +88,13 @@ exports[`All the recipes component renders properly 1`] = `
                 />
                 Back to Categories
               </a>
+            </div>
+            <div
+              className="col-sm-3"
+            >
+              <h3
+                className="text-center"
+              />
             </div>
           </div>
           <hr />

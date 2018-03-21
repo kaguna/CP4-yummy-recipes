@@ -44,60 +44,62 @@ exports[`Navbarcomponent renders properly 1`] = `
       <li
         className="nav navbar-nav navbar-right"
       >
-        <li>
-          <a
-            aria-expanded="true"
-            aria-haspopup="true"
-            className="dropdown-toggle"
-            data-toggle="dropdown"
-            href=""
-            id="profile"
-          >
-            <span
-              className="glyphicon glyphicon-user"
+        <ul>
+          <li>
+            <a
+              aria-expanded="true"
+              aria-haspopup="true"
+              className="dropdown-toggle"
+              data-toggle="dropdown"
+              href=""
+              id="profile"
             >
               <span
-                id="username"
+                className="glyphicon glyphicon-user"
               >
-                 
+                <span
+                  id="username"
+                >
+                   
+                </span>
+                <span
+                  className="caret"
+                />
               </span>
-              <span
-                className="caret"
+            </a>
+            <ul
+              aria-labelledby="profile"
+              className="dropdown-menu"
+            >
+              <li>
+                <a
+                  data-target="#changepassword"
+                  data-toggle="modal"
+                  href="#changepassword"
+                >
+                  <i
+                    className="glyphicon glyphicon-edit"
+                  />
+                   Change password
+                </a>
+              </li>
+              <li
+                className="divider"
+                role="separator"
               />
-            </span>
-          </a>
-          <ul
-            aria-labelledby="profile"
-            className="dropdown-menu"
-          >
-            <li>
-              <a
-                data-target="#changepassword"
-                data-toggle="modal"
-                href="#changepassword"
-              >
-                <i
-                  className="glyphicon glyphicon-edit"
-                />
-                 Change password
-              </a>
-            </li>
-            <li
-              className="divider"
-              role="separator"
-            />
-            <li>
-              <a
-                href="/logout"
-              >
-                <i
-                  className="glyphicon glyphicon-log-out"
-                />
-                 Logout
-              </a>
-            </li>
-          </ul>
-        </li>
+              <li>
+                <a
+                  href="/logout"
+                >
+                  <i
+                    className="glyphicon glyphicon-log-out"
+                  />
+                   Logout
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </li>
     </div>
   </div>

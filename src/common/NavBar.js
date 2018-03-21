@@ -20,28 +20,30 @@ class Header extends Component {
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
             <li className="nav navbar-nav navbar-right">
-              <li><a
-                href=""
-                className="dropdown-toggle"
-                id="profile"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="true"
-              >
-                <span className="glyphicon glyphicon-user">
-                  <span id="username"> {window.localStorage.getItem('username')}</span>
-                  <span className="caret" />
-                </span>
-              </a>
-                <ul className="dropdown-menu" aria-labelledby="profile">
-                  <li><a href="#changepassword" data-toggle="modal" data-target="#changepassword">
-                    <i className="glyphicon glyphicon-edit" /> Change password
-                  </a>
-                  </li>
-                  <li role="separator" className="divider" />
-                  <li><a href="/logout"><i className="glyphicon glyphicon-log-out" /> Logout</a></li>
-                </ul>
-              </li>
+              <ul>
+                <li><a
+                  href=""
+                  className="dropdown-toggle"
+                  id="profile"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="true"
+                >
+                  <span className="glyphicon glyphicon-user">
+                    <span id="username"> {window.localStorage.getItem('username')}</span>
+                    <span className="caret" />
+                  </span>
+                    </a>
+                  <ul className="dropdown-menu" aria-labelledby="profile">
+                    <li><a href="#changepassword" data-toggle="modal" data-target="#changepassword">
+                      <i className="glyphicon glyphicon-edit" /> Change password
+                        </a>
+                    </li>
+                    <li role="separator" className="divider" />
+                    <li><a href="/logout"><i className="glyphicon glyphicon-log-out" /> Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
             </li>
           </div>
         </div>

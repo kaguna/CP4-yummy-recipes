@@ -14,7 +14,7 @@ let url = '/categories/';
 
 class Home extends Component {
     state = {
-      categories: [], items: '', current_page: '', pages: [],
+      categories: [], items: '', current_page: '', pages: [], categoryName: '',
     };
     inputHandler = (event) => {
       const { name, value } = event.target;
@@ -71,6 +71,10 @@ class Home extends Component {
       event.preventDefault();
       this.viewCategoriesHandler(event.target.value);
     }
+    getCategoryName = (categoryName) => {
+      console.log(categoryName)
+      this.setState({categoryName: categoryName});
+    }
     componentDidMount() {
       this.viewCategoriesHandler();
     }
@@ -82,6 +86,7 @@ class Home extends Component {
       const allPages = [];
       for (let i = 1; i <= pages; i++) {
         allPages.push(<Pagination.Item
+          key={i + 1}
           active={i === current_page}
           onClick={this.paginationHandler.bind(this, i)}
         >
@@ -89,7 +94,7 @@ class Home extends Component {
                       </Pagination.Item>);
       }
       return (
-        <div id="all_categories">
+        <div>
           <Header />
           <Toaster />
           <CreateCategory categoryAfterCreation={this.viewCategoriesHandler} />
@@ -137,10 +142,10 @@ class Home extends Component {
                       </div> : ''}
                   </div>
                   <label>{noCategory}</label>
-                  <div className="row">
+                  <div className="row" >
                     { categories.map(category => (
-                      <div className="col-sm-3">
-                        <div className="panel panel-default" >
+                      <div className="col-sm-3" key={category.id + 3}>
+                        <div className="panel panel-default">
                           <div className="panel-heading">
                             <h3 className="text-center">{category.category_name}</h3>
                           </div>
@@ -162,14 +167,14 @@ class Home extends Component {
                           </div>
                         </div>
                         <EditCategory
-                          key={category.id}
+                          key={category.id + 1}
                           category_id={`edit_category${category.id}`}
                           category={category}
                           categoryAfterEdit={this.viewCategoriesHandler}
                           parent={this}
                         />
                         <DeleteCategory
-                          key={category.id}
+                          key={category.id + 2}
                           category_id={`delete_category${category.id}`}
                           category={category}
                           categoryAfterDelete={this.viewCategoriesHandler}
